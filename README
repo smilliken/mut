@@ -4,6 +4,17 @@ sshfs - SSH Filesystem, http://fuse.sourceforge.net/sshfs.html
 NOTES:
 * Tag names are one alpha-numeric word; "open", "closed", and "started" are reserved, and are automatically attached to tasks.
 
+SETUP
+* create virtual environment:
+python virtualenv.py .
+* active virtual environment:
+source bin/activate
+* install packages:
+pip install -r required_pkgs
+
+RUN
+python src/run.py
+
 BUILD
 Binary distributables are built using pyinstaller. To build a new binary:
 * source bin/activate
