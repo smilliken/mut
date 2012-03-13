@@ -20,7 +20,7 @@ command_usage_help = {
         ]
     },
     'drop-remote': {
-        'usage': 'mut drop_remote <remote_name>',
+        'usage': 'mut drop-remote <remote_name>',
         'desc': 'Drop remote repository host.',
         'shortdesc': 'drop remote repository'
     },
