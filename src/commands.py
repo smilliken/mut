@@ -28,9 +28,9 @@ def init(repo_name):
         return
     print('Initializing repository: %s' % repo_name)
     with DBConn(repo_name) as c:
-        c.execute('CREATE TABLE task (id INTEGER PRIMARY KEY, description TEXT, priority INTEGER, created_by TEXT, created DATETIME, started DATETIME, finished DATETIME);')
+        c.execute('CREATE TABLE task (id INTEGER PRIMARY KEY, description TEXT, priority INTEGER, created DATETIME, started DATETIME, finished DATETIME);')
         # TODO: unique constraint on (tag, task_id)
-        c.execute('CREATE TABLE tag (id INTEGER PRIMARY KEY, tag TEXT, task_id INTEGER, created_by TEXT, created DATETIME, FOREIGN KEY(task_id) REFERENCES task(id));')
+        c.execute('CREATE TABLE tag (id INTEGER PRIMARY KEY, tag TEXT, task_id INTEGER, created DATETIME, FOREIGN KEY(task_id) REFERENCES task(id));')
     switch(repo_name)
 
 def add_remote(repo_uri, remote_name=None):
