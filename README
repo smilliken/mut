@@ -1,0 +1,17 @@
+DEPENDENCIES
+sshfs - SSH Filesystem, http://fuse.sourceforge.net/sshfs.html
+
+NOTES:
+* Tag names are one alpha-numeric word; "open", "closed", and "started" are reserved, and are automatically attached to tasks.
+
+BUILD
+Binary distributables are built using pyinstaller. To build a new binary:
+* source bin/activate
+* wget https://github.com/downloads/pyinstaller/pyinstaller/pyinstaller-1.5.1.tar.bz2
+* tar -jxvf pyinstaller-1.5.1.tar.bz2; cd pyinstaller-1.5.1/
+* python Configure.py
+* python Makespec.py --onefile ../src/run.py
+* python Build.py run/run.spec
+
+INSTALL
+* sudo cp ./run/dist/run /usr/bin/mut

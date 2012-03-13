@@ -1,0 +1,7 @@
+*.pyc
+*.pyo
+bin
+include/
+lib/
+local
+pyinstaller-*
