@@ -26,3 +26,10 @@ Binary distributables are built using pyinstaller. To build a new binary:
 
 INSTALL
 * sudo cp ./run/dist/run /usr/bin/mut
+
+TODO
+* stored in a mut database called 'todo' in this directory
+* to use, hard link the database to your mut repo directory:
+    ln todo ~/.mut/mut
+* then switch to this repo:
+    mut switch mut
