@@ -157,6 +157,7 @@ if __name__ == '__main__':
     try:
         sys.exit(main())
     except InvalidUsageException, ex:
-        sys.stderr.write('%s\n\n' % ex)
+        if str(ex):
+            sys.stderr.write('%s\n\n' % ex)
         usage()
         sys.exit(1)
