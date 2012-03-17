@@ -1,8 +1,13 @@
 import sys
 import itertools
 import datetime
+from signal import signal, SIGPIPE, SIG_DFL 
 from dateutil import tz, parser
 from termcolor import colored
+
+# fix for exception thrown when running e.g. "mut ls | head -n 1"
+# see: http://newbebweb.blogspot.com/2012/02/python-head-ioerror-errno-32-broken.html
+signal(SIGPIPE, SIG_DFL)
 
 def _to_local_time(dt):
     dt = dt.replace(tzinfo=tz.tzutc())
