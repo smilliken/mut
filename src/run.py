@@ -132,6 +132,15 @@ def main():
         if flags['priority'] or flags['tags'] or flags['neg_tags']:
             raise InvalidUsageException('Invalid options specified.')
         commands.start(id)
+    elif command == 'stop':
+        try:
+            id = argv[1]
+        except IndexError:
+            raise InvalidUsageException('id is required.')
+        flags = _parse_flags(argv[2:])
+        if flags['priority'] or flags['tags'] or flags['neg_tags']:
+            raise InvalidUsageException('Invalid options specified.')
+        commands.stop(id)
     elif command == 'finish':
         try:
             id = argv[1]

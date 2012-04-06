@@ -116,6 +116,11 @@ def start(id):
         add_tag(c, 'started', id)
         print_tasks(c, [id])
 
+def stop(id):
+    with DBConn() as c:
+        rm_tag(c, 'started', id)
+        print_tasks(c, [id])
+
 def finish(id):
     with DBConn() as c:
         c.execute('UPDATE task SET finished = ? WHERE id = ?;', (datetime.datetime.utcnow(), id))

@@ -60,6 +60,11 @@ command_usage_help = {
         'desc': 'Mark task as started.',
         'shortdesc': 'start task'
     },
+    'stop': {
+        'usage': 'mut stop <id>',
+        'desc': 'Unmark task as started.',
+        'shortdesc': 'stop task'
+    },
     'finish': {
         'usage': 'mut finish <id>',
         'desc': 'Mark task as finished.',
